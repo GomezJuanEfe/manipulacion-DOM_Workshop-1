@@ -35,13 +35,18 @@ window
     responseJson.data.forEach(item => {
       const image = document.createElement('img');
       image.src = `${baseUrl}${item.image}`;
+      image.className = 'w-32 rounded-full'
+
       const title = document.createElement('h2');
       title.textContent = item.name;
+      title.className = 'text-xl font-black text-purple-600';
 
       const price = document.createElement('div');
       price.textContent = formatPrice(item.price);
+      price.className = 'font-bold ';
 
       const container = document.createElement('div');
+      container.className = 'flex-col flex-wrap container mx-auto w-80 bg-gray-100 rounded-2xl flex-initial p-2 m-4'
 
       container.append(image, title, price);
 
